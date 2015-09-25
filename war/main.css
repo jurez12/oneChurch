@@ -1,0 +1,370 @@
+		/** Add css rules here for your application. */
+	
+	
+	/** Example rules used by the template application (remove for your app) */
+	h1 {
+	  font-size: 2em;
+	  font-weight: bold;
+	  color: #777777;
+	  margin: 40px 0px 70px;
+	  text-align: center;
+	}
+	
+	.sendButton {
+	  display: block;
+	  font-size: 16pt;
+	}
+	
+	/** Most GWT widgets already have a style name defined */
+	.gwt-DialogBox {
+	  width: 400px;
+	}
+	
+	.dialogVPanel {
+	  margin: 5px;
+	}
+	
+	.serverResponseLabelError {
+	  color: red;
+	}
+	
+	/** Set ids using widget.getElement().setId("idOfElement") */
+	#closeButton {
+	  margin: 15px 6px 6px;
+	}
+	
+	.infoStyle {
+		text-align: center;
+		font-weight: bold;
+		
+	}
+	.FlexTable {
+	  table-layout: fixed;
+	  border-top: thin solid #444444;
+	  border-left: thin solid #444444;
+	  border-right: thin solid #111111;
+	  border-bottom: thin solid #111111;
+	  background-color:  #505050;
+	}
+	
+	.FlexTable-OddRow {
+	  background-color: #FFFFFF;
+	}
+	
+	.FlexTable-Header {
+	  font-weight: bold; 
+	  padding: 10px;
+	  border-width: 10px 10px 10px 10px;
+	  border-style: solid;
+	  border-color: white;
+	  margin: 0;
+	  padding: 0;
+	  text-align: center;
+	  background-color:  #111111;
+	   color: white;
+	  
+	}
+	.FlexTable-EvenRow {
+	  background-color:  #FFFF99;
+	  color: black;
+	}
+	
+	.FlexTable-ColumnLabel {
+	  color: white;
+	  padding: 3px;
+	}
+	
+	.FlexTable-ColumnLabelCell {
+	  border-width: 0 0 1px 0;
+	  border-style: solid;
+	  border-color: white;
+	  margin: 0;
+	  padding: 0;
+	  text-align: center;
+	}
+	
+	.FlexTable-Cell {
+	  border-width: 0px 0px 0px 1px;
+	  border-style: solid;
+	  border-color: white;
+	  padding: 5px;
+	}
+	
+	.userNameColumn {
+		 font-weight: bold;
+		 width: 200px;
+	}
+	.timeStampColumn {
+		 font-weight: bold;
+		  width: 250px;
+	}
+	
+	/*	
+		X cooridnate is -25 -122 -218 -315 -412
+		y  cooridnate is -10 100 190  280  370 455 545 635 
+		*/
+	
+	.laugh {
+		background: url("/images/smileys.jpg") -25px -10px;
+		width: 55px;
+		height: 55px;
+		display: block; 
+	}
+	
+	.bulb {
+		background: url("/images/smileys.jpg") -122px -10px;
+		width: 55px;
+		height: 55px;
+		display: block;
+	}
+	
+	.fever {
+		background: url("/images/smileys.jpg") -218px -10px;
+		 width: 55px;
+	    height: 55px;
+	    display: block;
+	 }
+	
+	.music {
+		background: url("/images/smileys.jpg") -315px -10px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.question {
+		background: url("/images/smileys.jpg") -412px -10px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+		
+	.exclamator {
+		background: url("/images/smileys.jpg") -25px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.thumbsdown {
+		background: url("/images/smileys.jpg") -122px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.thumbsup {
+		background: url("/images/smileys.jpg") -218px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.call {
+		background: url("/images/smileys.jpg") -315px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.rofl {
+		background: url("/images/smileys.jpg") -412px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.cry {
+		background: url("/images/smileys.jpg") -25px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.oh {
+		background: url("/images/smileys.jpg") -122px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.ah {
+		background: url("/images/smileys.jpg") -218px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.ahh {
+		background: url("/images/smileys.jpg") -315px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.cool {
+		background: url("/images/smileys.jpg") -412px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.angry {
+		background: url("/images/smileys.jpg") -25px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.angry1 {
+		background: url("/images/smileys.jpg") -122px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.wink {
+		background: url("/images/smileys.jpg") -218px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.love {
+		background: url("/images/smileys.jpg") -315px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.crazy {
+		background: url("/images/smileys.jpg") -412px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.smile {
+		background: url("/images/smileys.jpg") -25px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.smile1 {
+		background: url("/images/smileys.jpg") -122px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.ps {
+		background: url("/images/smileys.jpg") -218px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.sad {
+		background: url("/images/smileys.jpg") -315px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.worry {
+		background: url("/images/smileys.jpg") -412px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.mad {
+		background: url("/images/smileys.jpg") -25px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.confused {
+		background: url("/images/smileys.jpg") -122px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.smirk {
+		background: url("/images/smileys.jpg") -218px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.kiss {
+		background: url("/images/smileys.jpg") -315px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.shut {
+		background: url("/images/smileys.jpg") -412px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.party {
+		background: url("/images/smileys.jpg") -25px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.cat {
+		background: url("/images/smileys.jpg") -122px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.nerd {
+		background: url("/images/smileys.jpg") -218px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.devil {
+		background: url("/images/smileys.jpg") -315px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.angel {
+		background: url("/images/smileys.jpg") -412px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.kissed {
+		background: url("/images/smileys.jpg") -25px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.money {
+		background: url("/images/smileys.jpg") -122px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.tense {
+		background: url("/images/smileys.jpg") -218px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.cap {
+		background: url("/images/smileys.jpg") -315px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.gloom {
+		background: url("/images/smileys.jpg") -412px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.img {
+		vertical-align: middle;
+		font-size:200%;
+	}
+	div.desc
+	{
+	  text-align: center;
+	  font-weight: normal;
+	  width: 120px;
+	  margin: 2px;
+	}
