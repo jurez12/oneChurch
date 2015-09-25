@@ -20,7 +20,6 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 	private static final long serialVersionUID = 1L;
 	Objectify ofy = ObjectifyService.begin();
 	
-	//Register the Objectify Service for the Picture entity
 	static {
 		ObjectifyService.register(ChurchInfo.class);
 	}
@@ -28,7 +27,7 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 	List<String> foulWordsList = new ArrayList<String>(Arrays.asList("sex", "shit", "rascal"));
 	
 	public String sentInfoToServer(String name, String location,
-			String emailAddress, String contactNumber, String prayerRequest, String denomiation,
+			String emailAddress, String contactNumber, String prayerRequest, String denomination,
 			String description) throws IllegalArgumentException {
 		String lowerCase  = description.toLowerCase();
 		
@@ -40,7 +39,7 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 		ChurchInfo churchInfo = new ChurchInfo();
 		churchInfo.setName(name);
 		churchInfo.setContactNumber(contactNumber);
-		churchInfo.setDenomiation(denomiation);
+		churchInfo.setDenomination(denomination);
 		churchInfo.setDescription(description);
 		churchInfo.setLocation(location);
 		churchInfo.setEmailAddress(emailAddress);
@@ -49,20 +48,17 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 		Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("GMT+530"));
 		cal.setTime(new Date());
 		churchInfo.setCreateDate(cal.getTime());
-		ofy.put(churchInfo);
+	
 		
 		List<ChurchInfo>  churchInfoList = ofy.query(ChurchInfo.class).order("createDate").list();
-		int row = 0 ;
-		
-		if (churchInfoList.size() > MAX_CHAT_LIMIT) {
-			int count = churchInfoList.size();
-			while (count >= MAX_CHAT_LIMIT) {
-				churchInfoList.get(row).setDelete(true);
-				count--;
-				row++;
+		for(ChurchInfo churchInfoDb : churchInfoList) {
+			if(churchInfoDb.getName().contains(name)){
+				return "Error : Church Name " + name + " already exist";
 			}
 		}
-		ofy.put(churchInfoList);
+		
+		ofy.put(churchInfo);
+		
 		return "Added " + churchInfo + " successfully";
 	}
 	

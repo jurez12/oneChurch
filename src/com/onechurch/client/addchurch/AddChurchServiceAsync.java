@@ -9,7 +9,7 @@ import com.onechurch.shared.ChurchInfo;
 public interface AddChurchServiceAsync {
 
 	void sentInfoToServer(String name, String location,
-			String emailAddress, String contactNumber, String prayerRequest, String denomiation,
+			String emailAddress, String contactNumber, String prayerRequest, String denomination,
 			String description, AsyncCallback<String> callback)
 			throws IllegalArgumentException;
 	

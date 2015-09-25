@@ -13,7 +13,7 @@ import com.onechurch.shared.ChurchInfo;
 @RemoteServiceRelativePath("addchurchservice")
 public interface AddChurchService extends RemoteService {
 	String sentInfoToServer(String name, String location,
-			String emailAddress, String contactNumber, String prayerRequest, String denomiation,
+			String emailAddress, String contactNumber, String prayerRequest, String denomination,
 			String description) throws IllegalArgumentException;
 	List<ChurchInfo> getInfoFromServer();
 }

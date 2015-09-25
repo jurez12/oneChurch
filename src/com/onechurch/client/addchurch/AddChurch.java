@@ -32,10 +32,10 @@ public class AddChurch implements EntryPoint {
 	}
 
 	private void setChurchInfoRpc(String name, String location,
-			String emailAddress, String contactNumber, String prayerRequest, String  denomiation,
+			String emailAddress, String contactNumber, String prayerRequest, String  denomination,
 			String description) {
 		addChurchService.sentInfoToServer(name, location, emailAddress,
-				contactNumber, prayerRequest, denomiation,  description,
+				contactNumber, prayerRequest, denomination,  description,
 				new AsyncCallback<String>() {
 					public void onFailure(Throwable caught) {
 						image.setVisible(false);

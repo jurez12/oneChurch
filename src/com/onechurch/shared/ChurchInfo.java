@@ -17,7 +17,7 @@ public class ChurchInfo implements Serializable {
 	private String contactNumber;
 	private String prayerRequest;
 	private String description = "";
-	public String denomiation;
+	public String denomination;
 	private Date createDate;
 	private boolean delete = false;
 	@Transient Date loaded;
@@ -71,12 +71,12 @@ public class ChurchInfo implements Serializable {
 		this.description = description;
 	}
 	
-	public String getDenomiation() {
-		return denomiation;
+	public String getDenomination() {
+		return denomination;
 	}
 	
-	public void setDenomiation(String denomiation) {
-		this.denomiation = denomiation;
+	public void setDenomination(String denomiation) {
+		this.denomination = denomiation;
 	}
 	
 	public Date getCreateDate() {
