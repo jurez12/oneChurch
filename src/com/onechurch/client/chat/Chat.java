@@ -36,7 +36,7 @@ import com.onechurch.shared.ChatInfo;
 
 
 public class Chat implements EntryPoint {
-
+	  String fontColor = "#00D2FF";
 	  private final ChatServiceAsync chatService = GWT
 			.create(ChatService.class);
 
@@ -46,7 +46,7 @@ public class Chat implements EntryPoint {
 	  final Button sendButton = new Button("Send");
 	  final Button insertSmiley = new Button("Insert  Smiley");
 	  VerticalPanel smileyPanel = new VerticalPanel();
-	  HTMLPanel smileyLabel = new HTMLPanel("<b>Please click the smiley icon down to insert.</b> <br> ");
+	  HTMLPanel smileyLabel = new HTMLPanel("<b style='color: " + fontColor + ";'>Please click the smiley icon down to insert.</b> <br> ");
 	
 	  final static TextArea  chatText = new TextArea ();
 	  final HTML serverResponseLabel = new HTML();
@@ -56,12 +56,14 @@ public class Chat implements EntryPoint {
 	  Timer timer;
 	  final int TIMER_MILISECONDS = 2000;
 	
-	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style=' background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter Admin/Pastor Name</div>");
+	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style='background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter Admin/Pastor Name</div>");
 	  final TextBox userNameTxt = new TextBox();
 	  final Button addUserButton = new Button("**LOGIN***");
 	  HorizontalPanel addUserPanel = new HorizontalPanel();
 	  String userName = "";
 	  VerticalPanel infoPanel = new VerticalPanel();
+	  
+
 		
 	  public void onModuleLoad() {
 		RootPanel.get("main").add(addUserPanel);
@@ -83,7 +85,7 @@ public class Chat implements EntryPoint {
 		smileyPanel.add(infoFlexTable);
 		smileyPanel.setVisible(false);
 		RootPanel.get("main").add(smileyPanel);
-		infoPanel.add(new HTMLPanel("<b>Talk to church Admin/pastor worldwide, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
+		infoPanel.add(new HTMLPanel("<b  style='color: " + fontColor + ";' ><br><br><br>Talk to church Admin/pastor worldwide, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
 		RootPanel.get("main").add(infoPanel);
 	}
 	
@@ -150,7 +152,7 @@ public class Chat implements EntryPoint {
 		//VerticalPanel infoPanel = new VerticalPanel();
 		
 		
-		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use Chrome for better perfomance.</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
+		//infoPanel.add(new HTMLPanel("<b  style='color: " + fontColor + ";' >This is chat to everyone, use Chrome for better perfomance.</b>"));
 		infoPanel.add(infoFlexTable);
 
 		infoFlexTable.addStyleName("infoStyle");
@@ -318,7 +320,7 @@ public class Chat implements EntryPoint {
 		sendButton.addStyleName("sendButton");
 		chatText.setFocus(true);
 		sendButton.addStyleName("sendButton");
-		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\"><b>Enter Chat Message Here :</b></div>"));
+		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\" style='color: " + fontColor + ";'><b>Enter Chat Message Here :</b></div>"));
 		setInfoFt.setWidget(0, 1, chatText);
 		setInfoFt.setWidget(0, 3, sendButton);
 		setInfoFt.setWidget(1, 1, insertSmiley);

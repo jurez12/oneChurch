@@ -1,4 +1,4 @@
-package com.onechurch.client;
+package com.onechurchOld.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.onechurch.shared.PatientInfo;
