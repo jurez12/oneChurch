@@ -1,6 +1,9 @@
 		/** Add css rules here for your application. */
 	
-	
+	.bg {
+    background: url("/images/church.jpg")
+    
+	}
 	/** Example rules used by the template application (remove for your app) */
 	h1 {
 	  font-size: 2em;

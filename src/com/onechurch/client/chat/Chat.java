@@ -56,9 +56,9 @@ public class Chat implements EntryPoint {
 	  Timer timer;
 	  final int TIMER_MILISECONDS = 2000;
 	
-	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style=' background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter User Name</div>");
+	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style=' background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter Admin/Pastor Name</div>");
 	  final TextBox userNameTxt = new TextBox();
-	  final Button addUserButton = new Button("Add User");
+	  final Button addUserButton = new Button("**LOGIN***");
 	  HorizontalPanel addUserPanel = new HorizontalPanel();
 	  String userName = "";
 	  VerticalPanel infoPanel = new VerticalPanel();
@@ -83,7 +83,7 @@ public class Chat implements EntryPoint {
 		smileyPanel.add(infoFlexTable);
 		smileyPanel.setVisible(false);
 		RootPanel.get("main").add(smileyPanel);
-		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
+		infoPanel.add(new HTMLPanel("<b>Talk to church Admin/pastor worldwide, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
 		RootPanel.get("main").add(infoPanel);
 	}
 	
@@ -92,7 +92,7 @@ public class Chat implements EntryPoint {
 		 if(userName!= null &&  userName.length() >= 1) {
 			 displayChat();
 		 } else {
-			 Window.alert("Please enter user name ");
+			 Window.alert("Please enter Admin name ");
 		 }
 	}
 	
