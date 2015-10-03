@@ -37,9 +37,10 @@ public class OneChurchServiceImpl extends RemoteServiceServlet implements
 
 	@Override
 	public List<ChurchInfo> getInfoFromServer() {
+		log("Entered logs of get info");
 		List<ChurchInfo>  churchInfoList = ofy.query(ChurchInfo.class).filter("delete", false).order("createDate").list();
 		for(ChurchInfo  churchInfo : churchInfoList) {
-			log("Retreived chat " + churchInfo.getName());
+			log("Retreived cHURCH " + churchInfo.getName());
 		}
 		//Loop the query results and add to the array
 		log("----------Retreived " + churchInfoList.size() + " rows");

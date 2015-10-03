@@ -6,21 +6,14 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
-   <servlet>
-    <servlet-name>oneChurch</servlet-name>
-    <servlet-class>com.onechurch.server.OneChurchServiceImpl</servlet-class>
-  </servlet>	
-  <servlet-mapping>
-    <servlet-name>oneChurch</servlet-name>
-    <url-pattern>/onechurch/OneChurchService</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>uploadServlet</servlet-name>
-    <servlet-class>com.onechurch.server.UploadServiceImpl</servlet-class>
+ <servlet>
+    <servlet-name>addchurch</servlet-name>
+    <servlet-class>com.onechurch.server.AddChurchServiceImpl</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>uploadServlet</servlet-name>
-    <url-pattern>/onechurch/uploadservice</url-pattern>
+
+ <servlet-mapping>
+    <servlet-name>addchurch</servlet-name>
+    <url-pattern>/addChurch/addchurchservice</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -33,18 +26,27 @@
     <url-pattern>/chat/chatservice</url-pattern>
   </servlet-mapping>
   
-  
-  <servlet>
-    <servlet-name>addChurch</servlet-name>
-    <servlet-class>com.onechurch.server.AddChurchServiceImpl</servlet-class>
+   <servlet>
+    <servlet-name>display</servlet-name>
+    <servlet-class>com.onechurch.server.OneChurchServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>addChurch</servlet-name>
-    <url-pattern>/addChurch/addchurchservice</url-pattern>
+    <servlet-name>display</servlet-name>
+    <url-pattern>/displayChurch/displaychurchservice</url-pattern>
   </servlet-mapping>
   
-	<servlet>
+  <servlet>
+    <servlet-name>new</servlet-name>
+    <servlet-class>com.onechurch.server.OneChurchServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>new</servlet-name>
+    <url-pattern>/displaysChurch/displayschurchservice</url-pattern>
+  </servlet-mapping>
+
+  	<servlet>
         <servlet-name>ErrorHandler</servlet-name>
         <servlet-class>com.onechurch.common.server.ErrorHandler</servlet-class>
 	</servlet>
@@ -80,7 +82,7 @@
     </filter-mapping>
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Chat.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

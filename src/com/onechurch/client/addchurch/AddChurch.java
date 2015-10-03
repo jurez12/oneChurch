@@ -62,56 +62,56 @@ public class AddChurch implements EntryPoint {
 		addChurchHorizontalPanel.add(addChurchTable);
 		
 		int row = 0;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Name :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Name :</b>") );
 		addChurchTable.setWidget(row, 1, name);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Denomiation :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Denomiation :</b>") );
 		addChurchTable.setWidget(row, 1, denomination);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Address :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Address :</b>") );
 		addChurchTable.setWidget(row, 1, address);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Service Langugaes :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Service Langugaes :</b>") );
 		addChurchTable.setWidget(row, 1, serviceLanguages);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Email Id :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Email Id :</b>") );
 		addChurchTable.setWidget(row, 1, emailAddress);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Contact Number :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Contact Number :</b>") );
 		addChurchTable.setWidget(row, 1, contactNumber);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Website :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Website :</b>") );
 		addChurchTable.setWidget(row, 1, website);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Image link :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Image link :</b>") );
 		addChurchTable.setWidget(row, 1, churchImage);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Media Info :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Media Info :</b>") );
 		addChurchTable.setWidget(row, 1, mediaInfo);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Event Info :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Event Info :</b>") );
 		addChurchTable.setWidget(row, 1, eventInfo);
 		row++;
 		
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Description :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Description :</b>") );
 		addChurchTable.setWidget(row, 1, description);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Prayer Request :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Prayer Request :</b>") );
 		addChurchTable.setWidget(row, 1, prayerRequest);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Admin Name :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Admin Name :</b>") );
 		addChurchTable.setWidget(row, 1, adminName);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Admin Address :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Admin Address :</b>") );
 		addChurchTable.setWidget(row, 1, adminAddress);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Admin Contact Number :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Admin Contact Number :</b>") );
 		addChurchTable.setWidget(row, 1, adminContactNumber);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Admin Email Address :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Admin Email Address :</b>") );
 		addChurchTable.setWidget(row, 1, adminEmailAddress);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b>Church Admin Password :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Admin Password :</b>") );
 		addChurchTable.setWidget(row, 1, adminPassword);
 		row++;
 		
@@ -134,7 +134,7 @@ public class AddChurch implements EntryPoint {
 			}
 		});
 		RootPanel.get("main").add(addChurchHorizontalPanel);
-		getChurchInfoRpc();
+		//getChurchInfoRpc();
 	}
 
 	private void setChurchInfoRpc(String name, String denomination, String address,

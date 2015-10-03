@@ -71,7 +71,7 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 		
 		ofy.put(churchInfo);
 		
-		return "Added " + churchInfo + " successfully";
+		return "Added " + churchInfo.getName() + " successfully";
 	}
 	
 	@Override
