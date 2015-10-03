@@ -73,6 +73,7 @@
 	.FlexTable-OddRow {
 	  background-color: #FFFFFF;
 	}
+	
 	.FlexTable-EvenRow {
 	  background-color:  #FFFF99;
 	  color: black;
@@ -82,6 +83,7 @@
 	.FlexTable-OddRow1 {
 	  background-color: #00000;
 	}
+	
 	.FlexTable-EvenRow1 {
 	  background-color:  #55555;
 	  color: black;

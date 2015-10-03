@@ -4,56 +4,42 @@
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee">
-
   <!-- Servlets -->
  <servlet>
-    <servlet-name>addchurch</servlet-name>
+    <servlet-name>AddChurch</servlet-name>
     <servlet-class>com.onechurch.server.AddChurchServiceImpl</servlet-class>
-  </servlet>
-
+ </servlet>
  <servlet-mapping>
-    <servlet-name>addchurch</servlet-name>
-    <url-pattern>/addChurch/addchurchservice</url-pattern>
-  </servlet-mapping>
+    <servlet-name>AddChurch</servlet-name>
+    <url-pattern>/AddChurch/AddChurchService</url-pattern>
+ </servlet-mapping>
 
-  <servlet>
+ <servlet>
     <servlet-name>chatInfo</servlet-name>
     <servlet-class>com.onechurch.server.ChatServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
+ </servlet>
+ <servlet-mapping>
     <servlet-name>chatInfo</servlet-name>
     <url-pattern>/chat/chatservice</url-pattern>
-  </servlet-mapping>
+ </servlet-mapping>
   
-   <servlet>
+ <servlet>
     <servlet-name>display</servlet-name>
     <servlet-class>com.onechurch.server.OneChurchServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
+ </servlet>
+ <servlet-mapping>
     <servlet-name>display</servlet-name>
     <url-pattern>/displayChurch/displaychurchservice</url-pattern>
-  </servlet-mapping>
+ </servlet-mapping>
   
-  <servlet>
-    <servlet-name>new</servlet-name>
-    <servlet-class>com.onechurch.server.OneChurchServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>new</servlet-name>
-    <url-pattern>/displaysChurch/displayschurchservice</url-pattern>
-  </servlet-mapping>
-
-  	<servlet>
-        <servlet-name>ErrorHandler</servlet-name>
-        <servlet-class>com.onechurch.common.server.ErrorHandler</servlet-class>
-	</servlet>
+ <servlet>
+     <servlet-name>ErrorHandler</servlet-name>
+     <servlet-class>com.onechurch.common.server.ErrorHandler</servlet-class>
+ </servlet>
 	<!-- servlet mappings -->
 	<servlet-mapping>
-        <servlet-name>ErrorHandler</servlet-name>
-        <url-pattern>/ErrorHandler</url-pattern>
+	       <servlet-name>ErrorHandler</servlet-name>
+	       <url-pattern>/ErrorHandler</url-pattern>
 	</servlet-mapping>
 	<error-page>
 	    <error-code>404</error-code>

@@ -20,9 +20,9 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 	private static final long serialVersionUID = 1L;
 	Objectify ofy = ObjectifyService.begin();
 	
-	static {
-		ObjectifyService.register(ChurchInfo.class);
-	}
+//	static {
+//		ObjectifyService.register(ChurchInfo.class);
+//	}
 	final int MAX_CHAT_LIMIT = 25;
 	List<String> foulWordsList = new ArrayList<String>(Arrays.asList("sex", "shit", "rascal"));
 	

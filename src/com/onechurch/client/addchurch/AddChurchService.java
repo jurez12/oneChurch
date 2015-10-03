@@ -10,7 +10,7 @@ import com.onechurch.shared.ChurchInfo;
 
 
 
-@RemoteServiceRelativePath("addchurchservice")
+@RemoteServiceRelativePath("AddChurchService")
 public interface AddChurchService extends RemoteService {
 	
 //	private String name;

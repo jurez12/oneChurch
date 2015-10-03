@@ -71,7 +71,7 @@ public class AddChurch implements EntryPoint {
 		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Address :</b>") );
 		addChurchTable.setWidget(row, 1, address);
 		row++;
-		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Service Langugaes :</b>") );
+		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Service Langugaes And Service Timings :</b>") );
 		addChurchTable.setWidget(row, 1, serviceLanguages);
 		row++;
 		addChurchTable.setWidget(row, 0, new HTML("<b style=\"color: #FFFFFF;\">Church Email Id :</b>") );

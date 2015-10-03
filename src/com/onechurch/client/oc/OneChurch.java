@@ -19,6 +19,7 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.onechurch.shared.ChurchInfo;
@@ -31,7 +32,8 @@ public class OneChurch implements EntryPoint{
 	FlexTable displayChurchTable = new FlexTable();
 	VerticalPanel mainVerticalPanel = new VerticalPanel();
 	HorizontalPanel displayChurchHorizontalPanel = new HorizontalPanel();
-	
+	HorizontalPanel searchChurchHorizontalPanel = new HorizontalPanel();
+	TextBox searchTextBox = new TextBox();
 	//name,  denomination,  address,
 //	 serviceLanguages,  emailAddress,  contactNumber, churchImage,
 //	  mediaInfo,  eventInfo,  description,  prayerRequest,
@@ -44,15 +46,26 @@ public class OneChurch implements EntryPoint{
 	@Override
 	public void onModuleLoad() {
 		
+		Button searchButton = new Button ("Search");
+		searchChurchHorizontalPanel.add(searchTextBox);
+		searchChurchHorizontalPanel.add(searchButton);
 		displayChurchHorizontalPanel.add(displayChurchTable);
 		image.setUrl("/images/loading.gif");
 		image.setVisible(false);
 		AbsolutePanel loadImagePanel = new AbsolutePanel ();
 		loadImagePanel.add(image);
 		RootPanel.get("display").add(loadImagePanel);
+		RootPanel.get("display").add(searchChurchHorizontalPanel);
 		RootPanel.get("display").add(displayChurchHorizontalPanel);
+		
+		searchButton.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				getChurchesInfoRpc();
+			}
+	      });
 		getChurchesInfoRpc();
-
 	}
 	
 	private void getChurchesInfoRpc() {
@@ -73,19 +86,27 @@ public class OneChurch implements EntryPoint{
 	}
 	
 	private void displayChurchesRpc(List<ChurchInfo> churches) {
+		displayChurchTable.clear();
 		int row = 0;
 		displayChurchTable.addStyleName("FlexTable");
-		
 		displayChurchTable.setText(row, 1,  "");
 		displayChurchTable.setText(row, 2,  "Church Description");
 		displayChurchTable.setText(row, 3,  "");
 		displayChurchTable.getRowFormatter().addStyleName(row,"FlexTable-Header");
 		
-		
-		//displayChurchTable.setWidget(row, 1,  new HTML("<div style=\"color: #FFFFFF;\"><b><h2> Church Logo</b></h2></div>"));
-		//displayChurchTable.setWidget(row, 2,  new HTML("<div style=\"color: #FFFFFF;\"><b><h2> Church Description</b></h2></div>"));
 		row++;
+		String searchValue = searchTextBox.getValue().toLowerCase().trim();
+        
+//        if (searchValue.length() < 3) {
+//        	Window.alert("Enter Valid Search, Search Text " + searchValue + " is invalid");
+//        	return;
+//        }
 		for(final ChurchInfo church : churches) {
+			if(church.getDenomination().toLowerCase().contains(searchValue) || 
+				church.getAddress().toLowerCase().contains(searchValue) ||  
+				church.getServiceLanguages().toLowerCase().contains(searchValue)) {
+				//Window.alert("Successful Search Text " + searchValue);
+			try {
 			String image ="<img src=" + church.getChurchImage() +
 			" style=\"width:200px;height:200px;\">";
 			String info = "<h3><table><tr><td><span style=\"color: #00D2FF;\">Church Name :</span></td><td><span style=\"color: #FFFFFF;\">" + church.getName() + "</span></td></tr>"; 
@@ -113,16 +134,18 @@ public class OneChurch implements EntryPoint{
 					
 				}
 		      });
-			displayChurchTable.setWidget(row, 3, viewDetailsButton);
-			 HTMLTable.RowFormatter rf = displayChurchTable.getRowFormatter();
+			 displayChurchTable.setWidget(row, 3, viewDetailsButton);
 			 if ((row % 2) != 0) {
-				 rf.addStyleName(row, "FlexTable-OddRow1");
+				 displayChurchTable.getRowFormatter().addStyleName(row, "FlexTable-OddRow1");
 		      }
 		      else {
-		    	  rf.addStyleName(row, "FlexTable-EvenRow1");
+		    	  displayChurchTable.getRowFormatter().addStyleName(row, "FlexTable-EvenRow1");
 		      }
-			 
 			row++;
+			} catch(Exception e) {
+				System.out.println("Error");
+			}
+			}
 		}
 	}
 	
