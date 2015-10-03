@@ -26,9 +26,11 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 	final int MAX_CHAT_LIMIT = 25;
 	List<String> foulWordsList = new ArrayList<String>(Arrays.asList("sex", "shit", "rascal"));
 	
-	public String sentInfoToServer(String name, String location,
-			String emailAddress, String contactNumber, String prayerRequest, String denomination,
-			String description) throws IllegalArgumentException {
+	public String sentInfoToServer(String name, String denomination, String address,
+			String serviceLanguages, String emailAddress, String contactNumber, String website, String churchImage,
+			 String mediaInfo, String eventInfo, String description, String prayerRequest,
+			String adminName, String adminAddress, String adminContactNumber,
+			String adminEmailAddress, String adminPassword) throws IllegalArgumentException {
 		String lowerCase  = description.toLowerCase();
 		
 		for(String foulWord : foulWordsList ) {
@@ -38,24 +40,34 @@ public class AddChurchServiceImpl extends RemoteServiceServlet implements
 		}
 		ChurchInfo churchInfo = new ChurchInfo();
 		churchInfo.setName(name);
-		churchInfo.setContactNumber(contactNumber);
 		churchInfo.setDenomination(denomination);
-		churchInfo.setDescription(description);
-		churchInfo.setLocation(location);
+		churchInfo.setAddress(address);
+		churchInfo.setServiceLanguages(serviceLanguages);
 		churchInfo.setEmailAddress(emailAddress);
+		churchInfo.setContactNumber(contactNumber);
+		churchInfo.setWebsite(website);
+		churchInfo.setChurchImage(churchImage);
+		churchInfo.setMediaInfo(mediaInfo);
+		churchInfo.setEventInfo(eventInfo);
+		churchInfo.setDescription(description);
 		churchInfo.setPrayerRequest(prayerRequest);
+		churchInfo.setAdminName(adminName);
+		churchInfo.setAdminAddress(adminAddress);
+		churchInfo.setAdminContactNumber(adminContactNumber);
+		churchInfo.setAdminEmailAddress(adminEmailAddress);
+		churchInfo.setAdminPassword(adminPassword);
 		
 		Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("GMT+530"));
 		cal.setTime(new Date());
 		churchInfo.setCreateDate(cal.getTime());
 	
 		
-		List<ChurchInfo>  churchInfoList = ofy.query(ChurchInfo.class).order("createDate").list();
-		for(ChurchInfo churchInfoDb : churchInfoList) {
-			if(churchInfoDb.getName().contains(name)){
-				return "Error : Church Name " + name + " already exist";
-			}
-		}
+//		List<ChurchInfo>  churchInfoList = ofy.query(ChurchInfo.class).order("createDate").list();
+//		for(ChurchInfo churchInfoDb : churchInfoList) {
+//			if(churchInfoDb.getName().contains(name)){
+//				return "Error : Church Name " + name + " already exist";
+//			}
+//		}
 		
 		ofy.put(churchInfo);
 		
