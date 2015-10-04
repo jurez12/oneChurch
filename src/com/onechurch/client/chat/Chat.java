@@ -56,7 +56,7 @@ public class Chat implements EntryPoint {
 	  Timer timer;
 	  final int TIMER_MILISECONDS = 2000;
 	
-	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style='background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter Admin/Pastor Name</div>");
+	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style='background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter Email ID</div>");
 	  final TextBox userNameTxt = new TextBox();
 	  final Button addUserButton = new Button("**LOGIN***");
 	  HorizontalPanel addUserPanel = new HorizontalPanel();
@@ -72,7 +72,7 @@ public class Chat implements EntryPoint {
 		RootPanel.get("main").add(displayPanel);
 		sendChat();
 		RootPanel.get("main").add(inputPanel);
-		displayPanel.add(getChatInfoFt);
+		//displayPanel.add(getChatInfoFt);
 		 getChatInfoRpc();
 		 timer = new Timer() {
 		      public void run() {
@@ -85,7 +85,7 @@ public class Chat implements EntryPoint {
 		smileyPanel.add(infoFlexTable);
 		smileyPanel.setVisible(false);
 		RootPanel.get("main").add(smileyPanel);
-		infoPanel.add(new HTMLPanel("<b  style='color: " + fontColor + ";' ><br><br><br>Talk to church Admin/pastor worldwide, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
+		infoPanel.add(new HTMLPanel("<b  style='color: " + fontColor + ";' ><br><br><br>Contact US, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
 		RootPanel.get("main").add(infoPanel);
 	}
 	
@@ -320,7 +320,7 @@ public class Chat implements EntryPoint {
 		sendButton.addStyleName("sendButton");
 		chatText.setFocus(true);
 		sendButton.addStyleName("sendButton");
-		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\" style='color: " + fontColor + ";'><b>Enter Chat Message Here :</b></div>"));
+		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\" style='color: " + fontColor + ";'><b>Enter Question, Comments and Feedback :</b></div>"));
 		setInfoFt.setWidget(0, 1, chatText);
 		setInfoFt.setWidget(0, 3, sendButton);
 		setInfoFt.setWidget(1, 1, insertSmiley);

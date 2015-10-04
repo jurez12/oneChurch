@@ -93,7 +93,7 @@ public class OneChurch implements EntryPoint{
 		displayChurchTable.setText(row, 2,  "Church Description");
 		displayChurchTable.setText(row, 3,  "");
 		displayChurchTable.getRowFormatter().addStyleName(row,"FlexTable-Header");
-		
+		boolean found = false;
 		row++;
 		String searchValue = searchTextBox.getValue().toLowerCase().trim();
         
@@ -104,16 +104,22 @@ public class OneChurch implements EntryPoint{
 		for(final ChurchInfo church : churches) {
 			if(church.getDenomination().toLowerCase().contains(searchValue) || 
 				church.getAddress().toLowerCase().contains(searchValue) ||  
-				church.getServiceLanguages().toLowerCase().contains(searchValue)) {
+				church.getServiceLanguages().toLowerCase().contains(searchValue) ||
+				church.getName().toLowerCase().contains(searchValue)) {
 				//Window.alert("Successful Search Text " + searchValue);
 			try {
+				found = true;
 			String image ="<img src=" + church.getChurchImage() +
 			" style=\"width:200px;height:200px;\">";
 			String info = "<h3><table><tr><td><span style=\"color: #00D2FF;\">Church Name :</span></td><td><span style=\"color: #FFFFFF;\">" + church.getName() + "</span></td></tr>"; 
 			info = info +"<tr><td><span style=\"color: #00D2FF;\">Denomiaition: </span></td><td><span style=\"color: #FFFFFF;\">"  +church.getDenomination() + "</span></td></tr>";
 			info = info +"<tr><td><span style=\"color: #00D2FF;\">Address:</span></td><td><span style=\"color: #FFFFFF;\">"  +church.getAddress() + "</span></td></tr>";
 			info = info +"<tr><td><span style=\"color: #00D2FF;\">Contact:</span></td><td><span style=\"color: #FFFFFF;\">"  +church.getContactNumber() + "</span></td></tr>";
-			info = info +"<tr><td><span style=\"color: #00D2FF;\">Service Language and Time:</span></td><td><span style=\"color: #FFFFFF;\">"  +church.getServiceLanguages() + "</span></td></tr></table></h3></div>";
+			info = info +"<tr><td><span style=\"color: #00D2FF;\">Service Language and Time:</span></td><td><span style=\"color: #FFFFFF;\">"  +church.getServiceLanguages() + "</span></td></tr>";
+			if (church.getWebsite().length() >3) {
+				info = info +"<tr><td><span style=\"color: #00D2FF;\">Website:</span></td><td><span style=\"color: #FFFFFF;\">"  +church.getWebsite() + "</span></td></tr>";
+			}		
+			info = info + "</table></h3></div>";
 			displayChurchTable.setWidget(row, 1,  new HTML(image));
 			displayChurchTable.getFlexCellFormatter().setWidth(row, 2, "600px");
 			displayChurchTable.setWidget(row, 2, new HTML(info));
@@ -146,6 +152,9 @@ public class OneChurch implements EntryPoint{
 				System.out.println("Error");
 			}
 			}
+		}
+		if (found==false) {
+			displayChurchTable.setWidget(row, 2, new HTML("No Church Records found"));
 		}
 	}
 	
