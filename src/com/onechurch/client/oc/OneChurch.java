@@ -135,7 +135,7 @@ public class OneChurch implements EntryPoint{
 
 		            int left = Window.getClientWidth()/ 2;
 		            int top = Window.getClientHeight()/ 2;
-		            myDialog.setPopupPosition(left, 0);
+		          //  myDialog.setPopupPosition(left, 0);
 		            myDialog.show();				
 					
 				}
@@ -169,6 +169,7 @@ public class OneChurch implements EntryPoint{
 
 	         // Enable glass background.
 	         setGlassEnabled(true);
+	         center();
 
 	         // DialogBox is a SimplePanel, so you have to set its widget 
 	         // property to whatever you want its contents to be.
